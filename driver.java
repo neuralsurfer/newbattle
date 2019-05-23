@@ -39,21 +39,45 @@ public class driver{
                tempY = inputOne.nextInt();
                
                System.out.println("Enter the rotation of the ship of " + oneLen + "\n"
-               +"(0 for vertical, 1 for horizontal, horizontal ships will always have the bow at the left\n"
-               +"vertical ships will have the bow at the top");
+               +"(0 for vertical with bow at top, 1 for horizontal with bow at right,\ntwo for vertical with bow at bottom, 3 for horizontal with bow at the left");
                
                
                rotation = inputOne.nextInt();
                int counter = tempX;
+               if(rotation == 0 || rotation == 1){
                for(int i = 0; i < oneLen; i++){
                    
                    if(rotation == 0 && !one.isValid(counter,tempY)){
                        System.out.println("That isn't a valid ship index, enter a different one in");
                        check = false;
                     }
+                   if(rotation == 1 && !one.isValid(tempX,counter)){
+                       System.out.println("That isn't a valid ship index, enter a different one in");
+                       check = false;
+                    }
                    counter++;
                    
                 }
+            }
+            if(rotation == 2 || rotation == 3){
+                
+                for(int i = 0; i < oneLen; i++){
+                   
+                   if(rotation == 2 && !one.isValid(counter,tempY)){
+                       System.out.println("That isn't a valid ship index, enter a different one in");
+                       check = false;
+                    }
+                   if(rotation == 3 && !one.isValid(tempX,counter)){
+                       System.out.println("That isn't a valid ship index, enter a different one in");
+                       check = false;
+                    }
+                   counter--;
+                   
+                }
+                
+                
+            }
+            
                if(check){
                    
                    one.setVisible(tempX,tempY,oneLen,rotation); 
