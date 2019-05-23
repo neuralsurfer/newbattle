@@ -49,6 +49,7 @@ public class game{
             int tempY = 0;
             int rotation = 0;
             boolean check = true;
+            boolean checkThree = false;
             Scanner inputOne = new Scanner(System.in);
             
             while(oneLen >=2){
@@ -64,23 +65,26 @@ public class game{
                tempY = inputOne.nextInt();
                
                System.out.println("Enter the rotation of the ship of " + oneLen + "\n"
-               +"(0 for vertical with bow at top, 1 for horizontal with bow at right,\ntwo for vertical with bow at bottom, 3 for horizontal with bow at the left");
+               +"(0 for vertical with bow at top, 1 for horizontal with bow at right,\n2 for vertical with bow at bottom, 3 for horizontal with bow at the left");
                
                
                rotation = inputOne.nextInt();
                int counter = tempX;
+               int counterY = tempY;
                if(rotation == 0 || rotation == 1){
                for(int i = 0; i < oneLen; i++){
                    
                    if(rotation == 0 && !one.isValid(counter,tempY)){
                       
                        check = false;
+                       counter++;
                     }
-                   if(rotation == 1 && !one.isValid(tempX,counter)){
+                   if(rotation == 1 && !one.isValid(tempX,counterY)){
                        
                        check = false;
+                       counterY--;
                     }
-                   counter++;
+                   
                    
                 }
             }
@@ -91,12 +95,14 @@ public class game{
                    if(rotation == 2 && !one.isValid(counter,tempY)){
                        
                        check = false;
+                       counter--;
                     }
                    if(rotation == 3 && !one.isValid(tempX,counter)){
                        
                        check = false;
+                       counterY++;
                     }
-                   counter--;
+                   
                    
                 }
                 
@@ -106,18 +112,34 @@ public class game{
                 check = false;
                 
             }
+            
                if(check){
                    
                    one.setVisible(tempX,tempY,oneLen,rotation); 
                    pOne.setShip(tempX,tempY,oneLen,rotation);
-                   oneLen--;
+                   if(!checkThree && oneLen == 3){
+                       checkThree = true;
+                    }
                    
+                    
+                    else{
+                    oneLen--;
+                    
+                   }
                 }
+              
+              
+               
                 else{
                     System.out.println("That isn't a valid ship index, enter a different one in");
                     
                     
                 }
+              
+              
+                
+                
+              
                
                 
                 
