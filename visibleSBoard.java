@@ -37,6 +37,20 @@ public class visibleSBoard{
                 }    
                        
             }
+            
+        for(int i = 0; i < len; i++){
+                if(rotation == 0){
+                    
+                    value[r][c] = "\u25A1";
+                    r--;
+                }
+                   if(rotation == 1){
+                    
+                    value[r][c] = "\u25A1";
+                    c--;
+                }    
+                       
+            }    
         
         
         

@@ -48,11 +48,11 @@ public class driver{
                for(int i = 0; i < oneLen; i++){
                    
                    if(rotation == 0 && !one.isValid(counter,tempY)){
-                       System.out.println("That isn't a valid ship index, enter a different one in");
+                      
                        check = false;
                     }
                    if(rotation == 1 && !one.isValid(tempX,counter)){
-                       System.out.println("That isn't a valid ship index, enter a different one in");
+                       
                        check = false;
                     }
                    counter++;
@@ -64,11 +64,11 @@ public class driver{
                 for(int i = 0; i < oneLen; i++){
                    
                    if(rotation == 2 && !one.isValid(counter,tempY)){
-                       System.out.println("That isn't a valid ship index, enter a different one in");
+                       
                        check = false;
                     }
                    if(rotation == 3 && !one.isValid(tempX,counter)){
-                       System.out.println("That isn't a valid ship index, enter a different one in");
+                       
                        check = false;
                     }
                    counter--;
@@ -77,16 +77,28 @@ public class driver{
                 
                 
             }
-            
+            else{
+                check = false;
+                
+            }
                if(check){
                    
                    one.setVisible(tempX,tempY,oneLen,rotation); 
+                   pOne.setShip(tempX,tempY,oneLen,rotation);
                    oneLen--;
                    
                 }
-                
-                
+                else{
+                    System.out.println("That isn't a valid ship index, enter a different one in");
+                    
+                    
+                }
                
+                
+                
+                
+                
+                
             }
            
            
