@@ -4,7 +4,7 @@ import java.util.*;
 public class Battleship extends JPanel
 {
     JPanel p = new JPanel();
-    shipTile[] grid = new shipTile[10];
+    button[] grid = new button[10];
     public static void main( String[] args )
     {
         new Battleship();
@@ -19,8 +19,8 @@ public class Battleship extends JPanel
         p.setLayout( new GridLayout(10, 10) );
         for( int i = 0; i < 100; i++ )
         {
-            grid[i] = new shipTile(null);
-            p.add(grid[i]);
+            button[i] = new button();
+            p.add(button[i]);
         }
         add(p);
         setVisible(true);
