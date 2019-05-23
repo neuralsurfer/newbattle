@@ -51,12 +51,13 @@ public class game{
             boolean check = true;
             boolean checkThree = false;
             Scanner inputOne = new Scanner(System.in);
-            
+            one.printVisibleBoard();
             while(oneLen >=2){
                
+                check = true;
               
                System.out.println();
-               one.printVisibleBoard();
+               
                
                System.out.println("Enter the row of bow the  of the ship of length " + oneLen);
                tempX = inputOne.nextInt();
@@ -77,15 +78,16 @@ public class game{
                    if(rotation == 0 && !one.isValid(counter,tempY)){
                       
                        check = false;
-                       counter++;
+                      
                     }
                    if(rotation == 1 && !one.isValid(tempX,counterY)){
                        
                        check = false;
-                       counterY--;
+                      
                     }
-                   
-                   
+                    
+                    if(rotation == 0)counter++;
+                   if(rotation == 1) counterY--;
                 }
             }
             else if(rotation == 2 || rotation == 3){
@@ -95,15 +97,16 @@ public class game{
                    if(rotation == 2 && !one.isValid(counter,tempY)){
                        
                        check = false;
-                       counter--;
+                     
                     }
-                   if(rotation == 3 && !one.isValid(tempX,counter)){
+                   if(rotation == 3 && !one.isValid(tempX,counterY)){
                        
                        check = false;
-                       counterY++;
+                      
                     }
                    
-                   
+                   if(rotation == 2)counter--;
+                   if(rotation == 3) counterY++;
                 }
                 
                 
@@ -142,7 +145,7 @@ public class game{
               
                
                 
-                
+               one.printVisibleBoard(); 
                 
                 
                 
