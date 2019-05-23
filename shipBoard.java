@@ -27,9 +27,49 @@ public class shipBoard{
         
     }
     
-    public void setShip(int r, int c, shipTile i){
+    
+    public void setShip(int r, int c, int len, int rotate){
         
-        game[r][c] = i;
+         ship boat = new ship(len);
+         if(rotate == 0 || rotate == 1){
+              
+                for(int i = 0; i < len; i++){
+             
+             
+                    if(rotate == 0 ){
+                      
+                      game[r][c] = new shipTile(boat);
+                      r++;
+                    }
+                   if(rotate == 1 ){
+                       
+                      game[r][c] = new shipTile(boat);
+                      c++;
+                    }
+                   
+                }
+             
+            }
+            if(rotate == 2 || rotate == 3){
+              
+                for(int i = 0; i < len; i++){
+             
+             
+                    if(rotate == 2 ){
+                      
+                      game[r][c] = new shipTile(boat);
+                      r--;
+                    }
+                   if(rotate == 3 ){
+                       
+                      game[r][c] = new shipTile(boat);
+                      c--;
+                    }
+                   
+                }
+             
+            }
+            
         
     }
 
@@ -38,25 +78,7 @@ public class shipBoard{
         return game[x][y];
     }
     
-    public void printShipBoard(){
-        
-        for(int r = 0; r < game.length; r++){
-            for(int c = 0; c < game[0].length; c++){
-                if(r%2 == 0){
-                    System.out.print("-");
-                     
-                }
-                else if(game[r][c] != null){
-                System.out.print("| "+  game[r][c].value() + " |");
-                
-            }
-            }
-            
-            
-            
-        }
-        
-    }
+    
 
 
 

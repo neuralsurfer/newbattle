@@ -22,10 +22,35 @@ public class visibleSBoard{
         
     }
 
-    public void setVisible(int r, int c, String i){
+    public void setVisible(int r, int c, int len, int rotation){
         
-        
-        value[r][c] = i;
+        for(int i = 0; i < len; i++){
+                if(rotation == 0){
+                    
+                    value[r][c] = "\u25A1";
+                    r++;
+                }
+                   if(rotation == 1){
+                    
+                    value[r][c] = "\u25A1";
+                    c++;
+                }    
+                       
+            }
+            
+        for(int i = 0; i < len; i++){
+                if(rotation == 2){
+                    
+                    value[r][c] = "\u25A1";
+                    r--;
+                }
+                   if(rotation == 3){
+                    
+                    value[r][c] = "\u25A1";
+                    c--;
+                }    
+                       
+            }    
         
         
         
@@ -41,15 +66,23 @@ public class visibleSBoard{
     public void printVisibleBoard(){
         
         for(int r = 0; r < value.length; r++){
+            System.out.println("_________________________________________");
             for(int c = 0; c < value[0].length; c++){
-                if(r%2 == 0){
-                    System.out.print("-");
-                     
+                
+                
+                System.out.print("|");
+                
+                if(value[r][c] != null){
+                    System.out.print(value[r][c]);
+                    
                 }
-                else if(value[r][c] != null){
-                System.out.print("| "+  value[r][c] + " |");
+                else{
+                    System.out.print(" ");
+                }
+                System.out.print("|   ");
                 
             }
+            System.out.println("\n");
             }
             
             
@@ -59,4 +92,4 @@ public class visibleSBoard{
     }
     
 
-}    
+   
