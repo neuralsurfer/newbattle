@@ -37,7 +37,26 @@ public class shipBoard{
         
         return game[x][y];
     }
-
+    
+    public void printShipBoard(){
+        
+        for(int r = 0; r < game.length; r++){
+            for(int c = 0; c < game[0].length; c++){
+                if(r%2 == 0){
+                    System.out.print("-");
+                     
+                }
+                else if(game[r][c] != null){
+                System.out.print("| "+  game[r][c].value() + " |");
+                
+            }
+            }
+            
+            
+            
+        }
+        
+    }
 
 
 

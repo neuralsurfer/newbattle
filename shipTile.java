@@ -8,6 +8,12 @@ public class shipTile{
     boolean shot;
     
     ship ref;
+    public shipTile(){
+        ref = null;
+        shot = false;
+        
+        
+    }
     public shipTile(ship i){
         
         

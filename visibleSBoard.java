@@ -37,6 +37,26 @@ public class visibleSBoard{
         
         
     }
-
+    
+    public void printVisibleBoard(){
+        
+        for(int r = 0; r < value.length; r++){
+            for(int c = 0; c < value[0].length; c++){
+                if(r%2 == 0){
+                    System.out.print("-");
+                     
+                }
+                else if(value[r][c] != null){
+                System.out.print("| "+  value[r][c] + " |");
+                
+            }
+            }
+            
+            
+            
+        }
+        
+    }
+    
 
 }    
