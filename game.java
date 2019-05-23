@@ -43,25 +43,7 @@ public class game{
         
     }
 
-    public static void printShipBoard(shipBoard i){
-        shipTile[][] o = i.getShipBoard();
-        for(int r = 0; r < o.length; r++){
-            for(int c = 0; c < o.length; c++){
-                if(r%2 == 0){
-                    System.out.print("-");
-                     
-                }
-                else if(o[r][c] != null){
-                System.out.print("| "+  o[r][c].value() + " |");
-                
-            }
-            }
-            
-            
-            
-        }
-        
-    }
+    
 
     
 
