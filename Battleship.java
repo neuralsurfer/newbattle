@@ -15,15 +15,14 @@ public class Battleship extends JFrame
         setName( "Battleship" );
         setSize( 1210, 1210 );
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout( new GridLayout( 11, 11, 1, 1) );
+        setLayout( new GridLayout( 12, 12, 1, 1) );
         for( int i = 0; i < 121; i++ )
         {
-            if( i < 11 )
+            if( i < 11 || i%11 == 0)
             {    
                 JLabel label = new JLabel( "bottom text");
                 add(label);
-            }
-                
+            }                
             else
             {
                 grid[i] = new button();

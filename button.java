@@ -14,7 +14,6 @@ public class button extends JButton implements ActionListener
     public button()
     {
         setBackground(Color.BLUE);
-        nothing = new ImageIcon( this.getClass().getResource( "Nothing.png" ) );
         miss = new ImageIcon( this.getClass().getResource( "Miss.png" ) ); 
         hit = new ImageIcon( this.getClass().getResource( "Hit.png" ) );
         this.addActionListener(this);
