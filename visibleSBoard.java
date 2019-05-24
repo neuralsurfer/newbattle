@@ -10,7 +10,7 @@ public class visibleSBoard{
         
         for(int i = 0; i < x; i++){
             for(int j = 0; j < y; j++){
-                value[i][j] = "  ";
+                value[i][j] = null;
                 
                 
             }
@@ -21,7 +21,12 @@ public class visibleSBoard{
         
         
     }
-
+    public void setVisible(int r, int c, String v){
+        
+        value[r][c] = v;
+    
+        
+    }
     public void setVisible(int r, int c, int len, int rotation){
         
         for(int i = 0; i < len; i++){
@@ -33,7 +38,7 @@ public class visibleSBoard{
                    if(rotation == 1){
                     
                     value[r][c] = "\u25A1";
-                    c++;
+                    c--;
                 }    
                        
             }
@@ -47,7 +52,7 @@ public class visibleSBoard{
                    if(rotation == 3){
                     
                     value[r][c] = "\u25A1";
-                    c--;
+                    c++;
                 }    
                        
             }    
@@ -57,7 +62,7 @@ public class visibleSBoard{
     }
     public boolean isValid(int x, int y){
         
-        return x < value.length && x > -1 && y < value[0].length && y > -1;
+        return x < value.length && x > -1 && y < value[0].length && y > -1 && value[x][y] == null;
         
         
         

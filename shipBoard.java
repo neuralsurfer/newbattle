@@ -44,7 +44,7 @@ public class shipBoard{
                    if(rotate == 1 ){
                        
                       game[r][c] = new shipTile(boat);
-                      c++;
+                      c--;
                     }
                    
                 }
@@ -63,7 +63,7 @@ public class shipBoard{
                    if(rotate == 3 ){
                        
                       game[r][c] = new shipTile(boat);
-                      c--;
+                      c++;
                     }
                    
                 }
