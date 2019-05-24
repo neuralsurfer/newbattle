@@ -17,8 +17,6 @@ public class button extends JButton implements ActionListener
         ypos = y;
         xpos = x;
         setBackground(Color.BLUE);
-        miss = new ImageIcon( this.getClass().getResource( "Miss.png" ) ); 
-        hit = new ImageIcon( this.getClass().getResource( "Hit.png" ) );
         this.addActionListener(this);
     }
     
@@ -34,18 +32,18 @@ public class button extends JButton implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-        value++;
+        value++; //change this to the method to set ships and for hit/miss
         value %= 3;
         switch(value)
         {
             case 0:
-                setIcon(null);
+                setBackground(Color.BLUE);
                 break;
             case 1:
-                setIcon(miss);
+                setBackground(Color.WHITE);
                 break;
             case 2:
-                setIcon(hit);
+                setBackground(Color.RED);
                 break;
         }
     }
