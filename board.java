@@ -1,9 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
 import java.util.*;
-public class Battleship extends JFrame
+public class board extends JFrame
 {
-    int border = 10;
+    int border = 14;
     JPanel p = new JPanel();
     button[][] grid = new button[border][border];
     String columnLabel = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -11,10 +11,10 @@ public class Battleship extends JFrame
     
     public static void main( String[] args )
     {
-        new Battleship();
+        new board();
     }
     
-    public Battleship()
+    public board()
     {
         setName( "CopyOfBattleship" );
         setSize( 900, 900 );
