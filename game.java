@@ -59,17 +59,19 @@ public class game{
                System.out.println();
                
                
-               System.out.println("Enter the row of bow the  of the ship of length " + oneLen);
+               System.out.println("Enter the row of bow the of the ship of length " + oneLen);
                tempX = inputOne.nextInt();
                
                System.out.println("Enter the collum of the bow of the ship of length " + oneLen);
                tempY = inputOne.nextInt();
                
                System.out.println("Enter the rotation of the ship of " + oneLen + "\n"
-               +"(0 for vertical with bow at top, 1 for horizontal with bow at right,\n2 for vertical with bow at bottom, 3 for horizontal with bow at the left");
+               +"(0 for vertical with bow at top, 1 for horizontal with bow at right,\n2 for vertical with bow at bottom, 3 for horizontal with bow at the left)");
                
                
                rotation = inputOne.nextInt();
+               game.clear();
+               
                int counter = tempX;
                int counterY = tempY;
                if(rotation == 0 || rotation == 1){
@@ -140,7 +142,7 @@ public class game{
                 }
               
               
-                
+                 
                 
               
                
@@ -154,13 +156,57 @@ public class game{
         
         
     }
-    public static void transition(){
+    public static void clear(){
         
+        System.out.print('\u000C');
+        
+        
+    }
+    public static void transition(){
+        System.out.print('\u000C');
         Scanner input = new Scanner(System.in);
         System.out.println("Pass the computer to the other player and hit any key once they have it");
         String str = input.nextLine();
+        System.out.print('\u000C');
+    }
+    // i is enemy shipBoard, j is enemey ship visiual board, k is player targeting visiual board
+    public static boolean fire(int r, int c, shipBoard i,  visibleSBoard j, visibleSBoard k){
+        boolean next = false;
+        if(r > -1 && r < i.getShipBoard().length && c >-1 && c < i.getShipBoard()[0].length){
+            if(i.getTile(r,c) != null && !i.getTile(r,c).isShot()){
+                i.getTile(r,c).shoot();
+                j.setVisible(r,c,"X");
+                k.setVisible(r,c,"X");
+                next = true;
+            }
+            else if(i.getTile(r,c) == null){
+                j.setVisible(r,c,"O");
+                k.setVisible(r,c,"O");
+                next = true;
+            }
+            else{
+                System.out.println("This tile has been shot at before");
+            }
+            
+        }
+        else{
+            System.out.println("This isn't a valid tile index");
+            
+        }
+        return next;
+    }
+    
+    public static void play(shipBoard pOne, visibleSBoard one, visibleSBoard tOne, shipBoard pTwo, visibleSBoard two, visibleSBoard tTwo){
+        String currentPlayer = "Player One";
+        Scanner input = new Scanner(System.in);
+        
+        
+        tOne.printVisibleBoard();
+        one.printVisibleBoard();
+        
         
     }
+    
     
 
 

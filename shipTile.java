@@ -33,6 +33,7 @@ public class shipTile{
         return shot;
         
     }
+    
     public ship getRef(){
         return ref;
         

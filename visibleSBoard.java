@@ -21,7 +21,12 @@ public class visibleSBoard{
         
         
     }
-
+    public void setVisible(int r, int c, String v){
+        
+        value[r][c] = v;
+    
+        
+    }
     public void setVisible(int r, int c, int len, int rotation){
         
         for(int i = 0; i < len; i++){
