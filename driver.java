@@ -18,11 +18,11 @@ public class driver{
            y = inputOne.nextInt();
            game.clear();
            visibleSBoard one = new visibleSBoard(x,y);
-           visibleSBoard Tone = new visibleSBoard(x,y);
+           visibleSBoard tOne = new visibleSBoard(x,y);
            shipBoard pOne = new shipBoard(x,y);
            
            visibleSBoard two = new visibleSBoard(x,y);
-           visibleSBoard Ttwo = new visibleSBoard(x,y);
+           visibleSBoard tTwo = new visibleSBoard(x,y);
            shipBoard pTwo = new shipBoard(x,y);
            
            
@@ -30,16 +30,18 @@ public class driver{
            game.transition();
            game.setShips(pTwo,two);
            game.transition();
-           while(game.isWinner(pOne,pTwo) == 0){
+           
+           game.play(pOne,one,tOne,pTwo,two,tTwo);
+           
+           if(game.isWinner(pOne,pTwo) == 1){
                
-               
-               
-               
-               
+               System.out.println("Player One has won the game!");
                
             }
-           
-           
+            else{
+                
+               System.out.println("Player Two has won the game!"); 
+            }
         }
 
 

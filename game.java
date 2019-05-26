@@ -169,9 +169,10 @@ public class game{
         String str = input.nextLine();
         System.out.print('\u000C');
     }
-    // i is enemy shipBoard, j is enemey ship visiual board, k is player targeting visiual board
+    // i is enemy shipBoard, j is enemey ship visible board, k is player targeting visible board
     public static boolean fire(int r, int c, shipBoard i,  visibleSBoard j, visibleSBoard k){
         boolean next = false;
+        
         if(r > -1 && r < i.getShipBoard().length && c >-1 && c < i.getShipBoard()[0].length){
             if(i.getTile(r,c) != null && !i.getTile(r,c).isShot()){
                 i.getTile(r,c).shoot();
@@ -193,18 +194,55 @@ public class game{
             System.out.println("This isn't a valid tile index");
             
         }
+        
         return next;
     }
     
     public static void play(shipBoard pOne, visibleSBoard one, visibleSBoard tOne, shipBoard pTwo, visibleSBoard two, visibleSBoard tTwo){
         String currentPlayer = "Player One";
         Scanner input = new Scanner(System.in);
+        int rInput = 0;
         
-        
+        int cInput = 0;
+        while(isWinner(pOne,pTwo) == 0){
+            currentPlayer = "Player One";
         tOne.printVisibleBoard();
         one.printVisibleBoard();
+        System.out.println("Enter the row of the ship you want to fire at");
+        rInput = input.nextInt();
+        System.out.println("Enter the collum of the ship you want to fire at");
+        cInput = input.nextInt();
         
+        while(!fire(rInput,cInput,pTwo,two,tOne)){
+            System.out.println("Enter the row of the ship you want to fire at");
+        rInput = input.nextInt();
+        System.out.println("Enter the collum of the ship you want to fire at");
+        cInput = input.nextInt();
+            
+        }
+        transition();
+        if(isWinner(pOne,pTwo) == 0){
+            currentPlayer = "Player Two";
+            
+              tTwo.printVisibleBoard();
+        two.printVisibleBoard();
+        System.out.println("Enter the row of the ship you want to fire at");
+        rInput = input.nextInt();
+        System.out.println("Enter the collum of the ship you want to fire at");
+        cInput = input.nextInt();
         
+        while(!fire(rInput,cInput,pOne,one,tTwo)){
+            System.out.println("Enter the row of the ship you want to fire at");
+        rInput = input.nextInt();
+        System.out.println("Enter the collum of the ship you want to fire at");
+        cInput = input.nextInt();
+            
+        }
+            
+            
+        }
+        
+    }
     }
     
     
