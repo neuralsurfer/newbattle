@@ -5,7 +5,7 @@ public class game{
 
 
     public static int isWinner(shipBoard one, shipBoard two){
-        
+        //This method will count health multiple times for each ship but it still works fine because if health is zero it wont matter and this method only needs to determine if there is zero health or not
         int countOne = 0;
         int countTwo = 0;
         
@@ -37,9 +37,9 @@ public class game{
             
             
         }
-        if(countTwo == 0) return 2;
-        if(countOne == 0) return 1;
-        return 0;
+        if(countTwo == 0) return 1;//Player two loses, player one wins
+        if(countOne == 0) return 2;//Player one loses, player two wins
+        return 0;//No winner
         
     }
 
