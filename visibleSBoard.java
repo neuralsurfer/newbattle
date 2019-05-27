@@ -89,7 +89,7 @@ public class visibleSBoard{
             }
             System.out.println("\n");
             }
-            
+            System.out.println("\n\n");
             
             
         }

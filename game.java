@@ -162,11 +162,16 @@ public class game{
         
         
     }
+    
     public static void transition(){
-        System.out.print('\u000C');
         Scanner input = new Scanner(System.in);
-        System.out.println("Pass the computer to the other player and hit any key once they have it");
+        System.out.println("Enter any key to end your turn");
         String str = input.nextLine();
+        System.out.print('\u000C');
+        
+        
+        System.out.println("Pass the computer to the other player and enter any key once they have it");
+        str = input.nextLine();
         System.out.print('\u000C');
     }
     // i is enemy shipBoard, j is enemey ship visible board, k is player targeting visible board
@@ -214,6 +219,7 @@ public class game{
         cInput = input.nextInt();
         
         while(!fire(rInput,cInput,pTwo,two,tOne)){
+            fire(rInput,cInput,pTwo,two,tOne);
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         System.out.println("Enter the collum of the ship you want to fire at");
@@ -232,6 +238,7 @@ public class game{
         cInput = input.nextInt();
         
         while(!fire(rInput,cInput,pOne,one,tTwo)){
+            fire(rInput,cInput,pOne,one,tTwo);
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         System.out.println("Enter the collum of the ship you want to fire at");
@@ -241,7 +248,8 @@ public class game{
             
             
         }
-        
+        if(isWinner(pOne, pTwo) == 0) transition();
+        else clear();
     }
     }
     
