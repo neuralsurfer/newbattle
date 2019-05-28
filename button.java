@@ -5,7 +5,7 @@ public class button extends JButton implements ActionListener
 {
     ImageIcon nothing, miss, hit;
     int value = 0;
-    int ypos = 0, xpos = 0;
+    static int ypos = 0, xpos = 0;
     /*
     0: nothing
     1: miss
@@ -20,12 +20,12 @@ public class button extends JButton implements ActionListener
         this.addActionListener(this);
     }
     
-    public int getXPos()
+    public static int getXPos()
     {
         return xpos;
     }
     
-    public int getYPos()
+    public static int getYPos()
     {
         return ypos;
     }

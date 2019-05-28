@@ -4,7 +4,7 @@ import java.util.*;
 public class board extends JFrame
 {
     int border = 11;
-    JPanel p = new JPanel();
+    public JPanel p = new JPanel();
     button[][] grid = new button[border*2][border];
     String columnLabel = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int counter = 0, rowLabel = 1;
@@ -16,9 +16,10 @@ public class board extends JFrame
     
     public board()
     {
-        setName( "board" );
-        setSize( 600, 1200 );
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        setName( "board" );
+        setSize( 450, 1200 );
         setLayout( new GridLayout( border*2 + 1, border + 1, 1, 1) );
         for( int i = 0; i < grid.length; i++ )
         {
@@ -49,7 +50,7 @@ public class board extends JFrame
             }
         }
         add(p);
-        setVisible(true);
+        setVisible(true);  
     }
     
 }
