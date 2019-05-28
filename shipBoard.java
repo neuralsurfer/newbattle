@@ -26,6 +26,12 @@ public class shipBoard{
         return game;
         
     }
+    public boolean isValid(int r, int c){
+        
+        return r < game.length && r > -1 && c < game[0].length && c > -1 && game[r][c] == null;
+        
+        
+    }
     
     
     public void setShip(int r, int c, int len, int rotate){
