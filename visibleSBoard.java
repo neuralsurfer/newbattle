@@ -71,7 +71,12 @@ public class visibleSBoard{
     public void printVisibleBoard(){
         
         for(int r = 0; r < value.length; r++){
-            System.out.println("_________________________________________");
+            for(int c = 0; c < value[0].length; c++){
+                System.out.print("------");
+                
+                
+            }
+           System.out.println();
             for(int c = 0; c < value[0].length; c++){
                 
                 
@@ -87,7 +92,7 @@ public class visibleSBoard{
                 System.out.print("|   ");
                 
             }
-            System.out.println("\n");
+           System.out.println();
             }
             System.out.println("\n\n");
             
