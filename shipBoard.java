@@ -20,7 +20,23 @@ public class shipBoard{
         
         
     }
-    
+    public int getLen(){
+        
+        return game.length;
+        
+        
+    }
+    public int get0Len(){
+        
+        return game[0].length;
+        
+    }
+    public boolean isValid(int r, int c){
+        
+        return game[r][c] != null && !game[r][c].isShot();
+        
+        
+    }
     public shipTile[][] getShipBoard(){
         
         return game;
@@ -54,6 +70,45 @@ public class shipBoard{
             
         }
         return -1;
+    }
+    public shipTile find(){
+        int counter = 0;
+        for(int r = 0; r < game.length; r++){
+            for(int c = 0; c <game[0].length; c++){
+                if(isValid(r,c)){
+                    
+                    counter++;
+                    
+                }
+                
+                
+                
+            }
+            
+            
+            
+        }
+        
+        
+        shipTile[] temp = new shipTile[counter];
+        counter = 0;
+        for(int r = 0; r < game.length; r++){
+            for(int c = 0; c <game[0].length; c++){
+                
+                if(isValid(r,c)){
+                    temp[counter] = game[r][c]; 
+                    counter++;
+                }
+                
+                
+            }
+            
+            
+            
+        }
+        
+        return temp[(int)(Math.random()*temp.length)];
+        
     }
     public void setShip(int r, int c, int le, int rotate){
         

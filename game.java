@@ -203,6 +203,13 @@ public class game{
         return hit;
     }//Returns 2 for hit, 1 for miss, 0 for not valid index
     
+    public static void fire(){
+        
+        
+        
+    }
+    
+    
     public static void play(shipBoard pOne, visibleSBoard one, visibleSBoard tOne, shipBoard pTwo, visibleSBoard two, visibleSBoard tTwo){
         String currentPlayer = "Player One";
         Scanner input = new Scanner(System.in);

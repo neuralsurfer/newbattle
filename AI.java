@@ -6,11 +6,13 @@ public class AI{
     visibleSBoard t;
     int difficulty;
     
+    shipBoard two;
     
-    public AI(shipBoard i, visibleSBoard vs, visibleSBoard ts, int r){
+    
+    public AI(shipBoard i, shipBoard tr, visibleSBoard ts, int r){
         
         a = i;
-        v = vs;
+        two = tr;
         t = ts;
         difficulty = r;
         
@@ -18,6 +20,15 @@ public class AI{
     }
     
     public void fire(){
+        int temp = (int)(Math.random()*10);
+        
+        if(temp < difficulty){
+            
+            
+            
+        }
+        
+        
         
         
         

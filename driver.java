@@ -29,7 +29,7 @@ public class driver{
         
            game.clear();
            
-           System.out.println("Would you like to play with one player or an AI? (Enter 0 for AI, 1 for player)");
+           System.out.println("Would you like to play with two players or an AI? (Enter 0 for AI, 1 for two players)");
            temp = inputOne.nextInt();
            if(temp==1){
            visibleSBoard one = new visibleSBoard(x,y);
