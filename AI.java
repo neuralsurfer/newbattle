@@ -17,7 +17,14 @@ public class AI{
         
     }
     
-    
+    public void fire(){
+        
+        
+        
+        
+        
+        
+    }
     
     
     
