@@ -76,7 +76,7 @@ public class shipBoard{
         int counter = 0;
         for(int r = 0; r < game.length; r++){
             for(int c = 0; c <game[0].length; c++){
-                if(!isValid(r,c) && !input.isValid(r,c)){
+                if(game[r][c] == null && !input.isValid(r,c)){
                     
                     counter++;
                     
@@ -97,7 +97,7 @@ public class shipBoard{
         for(int r = 0; r < game.length; r++){
             for(int c = 0; c <game[0].length; c++){
                 
-                if(!isValid(r,c) && !input.isValid(r,c)){
+                if(game[r][c] == null && !input.isValid(r,c)){
                     temp[counter] = r;
                     tempY[counter] = c;
                     counter++;

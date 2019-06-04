@@ -229,7 +229,7 @@ public class game{
            e.getTile(r,c).shoot();
         }
         else{
-            ev.setVisible(r,c,"0");
+            ev.setVisible(r,c,"O");
             
             
         }
@@ -250,16 +250,16 @@ public class game{
         one.printVisibleBoard();
         
         if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
-             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput));
+             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
              
             }
         
-                else if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
-             System.out.println("Your ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput));
+                if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Your ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
              
             }
                else if(!first) {
-             System.out.println("Enemy missed you at row: " +(rInput +1)+ ", col: "+ (1+cInput));
+             System.out.println("Enemy missed you at row: " +(rInput +1)+ ", col: "+ (1+cInput) +"\n");
              
             }
             first = false;
@@ -283,16 +283,16 @@ public class game{
         tOne.printVisibleBoard();
         one.printVisibleBoard();
            if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
-             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              
             }
         
-                else if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
-             System.out.println("Enemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1));
+                 if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Enemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              
             }
                else{
-             System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              
             }
             System.out.println("\n");
@@ -308,7 +308,7 @@ public class game{
              
             }
         
-                else if(pOne.getTile(rInput,cInput)!= null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
+                 if(pOne.getTile(rInput,cInput)!= null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("Your ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1));
              
             }

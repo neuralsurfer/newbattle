@@ -9,11 +9,11 @@ public class driver{
            int x = 0;
            int y = 0;
            while(!check){
-           System.out.println("How many rows would you like there to be? ");
+           System.out.println("How many rows would you like there to be?\n ");
            
            x = inputOne.nextInt();
            
-           System.out.println("How many collums would you like there to be? ");
+           System.out.println("How many collums would you like there to be?\n ");
            
            y = inputOne.nextInt();
            if(x > 7 && x <21 && y > 7 && y < 21){
@@ -21,7 +21,7 @@ public class driver{
                
             }
             else{
-                System.out.println("That isn't a valid board size");
+                System.out.println("That isn't a valid board size\n");
                 
             }
         }
@@ -29,7 +29,7 @@ public class driver{
         
            game.clear();
            
-           System.out.println("Would you like to play with an AI or with two players? (Enter 1 for AI, 2 for two players)");
+           System.out.println("Would you like to play with an AI or with two players? (Enter 1 for AI, 2 for two players)\n");
            temp = inputOne.nextInt();
            if(temp==2){
                game.clear();
