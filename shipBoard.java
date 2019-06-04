@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 public class shipBoard{
 
     shipTile[][] game;
@@ -33,6 +33,7 @@ public class shipBoard{
     }
     public boolean isValid(int r, int c){
         
+       
         return game[r][c] != null && !game[r][c].isShot();
         
         
@@ -71,7 +72,53 @@ public class shipBoard{
         }
         return -1;
     }
-    public shipTile find(){
+    public int[] findINVALID(visibleSBoard input){
+        int counter = 0;
+        for(int r = 0; r < game.length; r++){
+            for(int c = 0; c <game[0].length; c++){
+                if(!isValid(r,c) && !input.isValid(r,c)){
+                    
+                    counter++;
+                    
+                }
+                
+                
+                
+            }
+            
+            
+            
+        }
+        
+        
+        int[] temp = new int[counter];
+        int[] tempY = new int[counter];
+        counter = 0;
+        for(int r = 0; r < game.length; r++){
+            for(int c = 0; c <game[0].length; c++){
+                
+                if(!isValid(r,c) && !input.isValid(r,c)){
+                    temp[counter] = r;
+                    tempY[counter] = c;
+                    counter++;
+                }
+                
+                
+            }
+            
+            
+            
+        }
+         int index = (int)(Math.random()*temp.length);
+         
+         int[] output = {temp[index],tempY[index]};
+         return output;
+        
+        
+        
+        
+    }
+    public int[] find(){
         int counter = 0;
         for(int r = 0; r < game.length; r++){
             for(int c = 0; c <game[0].length; c++){
@@ -90,13 +137,15 @@ public class shipBoard{
         }
         
         
-        shipTile[] temp = new shipTile[counter];
+        int[] temp = new int[counter];
+        int[] tempY = new int[counter];
         counter = 0;
         for(int r = 0; r < game.length; r++){
             for(int c = 0; c <game[0].length; c++){
                 
                 if(isValid(r,c)){
-                    temp[counter] = game[r][c]; 
+                    temp[counter] = r;
+                    tempY[counter] = c;
                     counter++;
                 }
                 
@@ -106,8 +155,10 @@ public class shipBoard{
             
             
         }
-        
-        return temp[(int)(Math.random()*temp.length)];
+         int index = (int)(Math.random()*temp.length);
+         
+         int[] output = {temp[index],tempY[index]};
+         return output;
         
     }
     public void setShip(int r, int c, int le, int rotate){

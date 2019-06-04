@@ -1,6 +1,6 @@
 
 
-import java.util.Scanner;
+import java.util.*;
 public class game{
 
 
@@ -61,15 +61,16 @@ public class game{
                
                System.out.println("Enter the row of bow the of the ship of length " + oneLen);
                tempX = inputOne.nextInt();
-               
+               tempX--;
                System.out.println("Enter the collum of the bow of the ship of length " + oneLen);
                tempY = inputOne.nextInt();
-               
+               tempY--;
                System.out.println("Enter the rotation of the ship of " + oneLen + "\n"
-               +"(0 for vertical with bow at top, 1 for horizontal with bow at right,\n2 for vertical with bow at bottom, 3 for horizontal with bow at the left)");
+               +"(1 for down, 2 for left, 3 for up, 4 right)");
                
                
                rotation = inputOne.nextInt();
+               rotation--;
                game.clear();
                
                int counter = tempX;
@@ -162,10 +163,28 @@ public class game{
         
         
     }
-    
+    public static void nextAI() throws InterruptedException{
+        String str = "AI will take its turn in:";
+        String[] count = {"Three","Two","One"};
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nHit any key and enter to end your turn");
+        input.nextLine();
+        
+        for(int i = 0; i < str.length();i++){
+            System.out.print(str.substring(i,i+1));
+            Thread.sleep(15);
+            
+        }
+        System.out.print(" ");
+        for(int i = 0; i < count.length; i++){
+            System.out.print(count[i]+" ");
+            Thread.sleep(250);
+        }
+        Thread.sleep(75);
+    }
     public static void transition(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter any key to end your turn");
+        System.out.println("Hit any key and enter to end your turn");
         String str = input.nextLine();
         System.out.print('\u000C');
         
@@ -185,13 +204,13 @@ public class game{
                 k.setVisible(r,c,"X");
                 hit = 2;
             }
-            else if(i.getTile(r,c) == null){
+            else if(j.getVisible(r,c) == null){
                 j.setVisible(r,c,"O");
                 k.setVisible(r,c,"O");
                 hit = 1;
             }
             else{
-                System.out.println("This tile has been shot at before");
+                System.out.println("This tile has been shot at before\n");
             }
             
         }
@@ -203,9 +222,17 @@ public class game{
         return hit;
     }//Returns 2 for hit, 1 for miss, 0 for not valid index
     
-    public static void fire(){
+    public static void fireAI(int r, int c, shipBoard e, visibleSBoard ev ){
         
-        
+       if(e.isValid(r,c)){
+           ev.setVisible(r,c,"X");
+           e.getTile(r,c).shoot();
+        }
+        else{
+            ev.setVisible(r,c,"0");
+            
+            
+        }
         
     }
     
@@ -213,53 +240,201 @@ public class game{
     public static void play(shipBoard pOne, visibleSBoard one, visibleSBoard tOne, shipBoard pTwo, visibleSBoard two, visibleSBoard tTwo){
         String currentPlayer = "Player One";
         Scanner input = new Scanner(System.in);
-        int rInput = 0;
+        int rInput = 1;
+        boolean first = true;
+        int cInput = 1;
         
-        int cInput = 0;
         while(isWinner(pOne,pTwo) == 0){
             currentPlayer = "Player One";
         tOne.printVisibleBoard();
         one.printVisibleBoard();
+        
+        if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
+             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput));
+             
+            }
+        
+                else if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Your ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput));
+             
+            }
+               else if(!first) {
+             System.out.println("Enemy missed you at row: " +(rInput +1)+ ", col: "+ (1+cInput));
+             
+            }
+            first = false;
+            System.out.println("\n");
         System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
+        rInput--;
         System.out.println("Enter the collum of the ship you want to fire at");
         cInput = input.nextInt();
-        
+        cInput--;
         while(fire(rInput,cInput,pTwo,two,tOne) == 0){
-            fire(rInput,cInput,pTwo,two,tOne);
+            
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
+        rInput--;
         System.out.println("Enter the collum of the ship you want to fire at");
         cInput = input.nextInt();
-            
+         cInput--;
         }
+        clear();
+        tOne.printVisibleBoard();
+        one.printVisibleBoard();
+           if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+        
+                else if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Enemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+               else{
+             System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+            System.out.println("\n");
         transition();
         if(isWinner(pOne,pTwo) == 0){
             currentPlayer = "Player Two";
             
               tTwo.printVisibleBoard();
         two.printVisibleBoard();
+        
+        if(pOne.getTile(rInput,cInput)!=  null &&  pOne.getTile(rInput,cInput).isShot()){
+             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+        
+                else if(pOne.getTile(rInput,cInput)!= null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Your ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+               else{
+             System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+            System.out.println("\n");
         System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
+        rInput--;
         System.out.println("Enter the collum of the ship you want to fire at");
         cInput = input.nextInt();
-        
+        cInput--;
         while(fire(rInput,cInput,pOne,one,tTwo)==0){
-            fire(rInput,cInput,pOne,one,tTwo);
+            
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
+        rInput--;
         System.out.println("Enter the collum of the ship you want to fire at");
         cInput = input.nextInt();
-            
+        cInput--;    
         }
-            
-            
+         clear();
+           tTwo.printVisibleBoard();
+        two.printVisibleBoard(); 
+        if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+        
+                else if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Enemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+               else{
+             System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+                     
         }
         if(isWinner(pOne, pTwo) == 0) transition();
         else clear();
     }
-    }
     
+    
+    
+    
+    
+    }
+    public static void playAI(shipBoard pOne, visibleSBoard one, visibleSBoard tOne, shipBoard pTwo, visibleSBoard two,AI a) throws InterruptedException{
+        
+          String currentPlayer = "Player One";
+        Scanner input = new Scanner(System.in);
+        int rInput = 1;
+        int[] index;
+        int cInput = 1;
+        boolean first = true;
+        while(isWinner(pOne,pTwo) == 0){
+            currentPlayer = "Player One";
+        tOne.printVisibleBoard();
+        one.printVisibleBoard();
+       if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
+             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput));
+             
+            }
+        
+                else if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Your ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput));
+             
+            }
+               else if(!first) {
+             System.out.println("Enemy missed you at row: " +(rInput +1)+ ", col: "+ (1+cInput));
+             
+            }
+            System.out.println("\n");
+            first = false;
+        System.out.println("Enter the row of the ship you want to fire at");
+        rInput = input.nextInt();
+        rInput--;
+        System.out.println("Enter the collum of the ship you want to fire at");
+        cInput = input.nextInt();
+        cInput--;
+        while(fire(rInput,cInput,pTwo,two,tOne) == 0){
+            
+            System.out.println("Enter the row of the ship you want to fire at");
+        rInput = input.nextInt();
+        rInput--;
+        System.out.println("Enter the collum of the ship you want to fire at");
+        cInput = input.nextInt();
+         cInput--;   
+        }
+        clear();
+        tOne.printVisibleBoard();
+        one.printVisibleBoard();
+        
+        if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+        
+                else if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("Enemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+               else{
+             System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1));
+             
+            }
+         System.out.println("\n");
+        nextAI();
+        clear();
+        if(isWinner(pOne,pTwo) == 0){
+            currentPlayer = "Player Two";
+            index = a.fire();
+            rInput = index[0];
+            cInput = index[1];
+        }
+        
+         
+         
+    }
+        
+        
+        
+    }
     
 
 

@@ -10,11 +10,7 @@ public class ship{
     
     public void hit(){
         health--;
-        if(health == 0){
-            
-         System.out.println("\nShip has been sunk");   
-            
-        }
+        
     }
     public int getHealth(){
         
