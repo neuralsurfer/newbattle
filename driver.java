@@ -2,12 +2,14 @@
 import java.util.*;
 public class driver{
 
-       public static void main(String args[]) throws InterruptedException{
+       public static void main(String args[]) throws InterruptedException {
           int temp = 0;
            Scanner inputOne = new Scanner(System.in);
            boolean check = false;
            int x = 0;
            int y = 0;
+           SoundPlayer play = new SoundPlayer();
+           play.loseSound();
            while(!check){
            System.out.println("How many rows would you like there to be?\n ");
            
