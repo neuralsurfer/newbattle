@@ -2,7 +2,7 @@
 import java.util.*;
 public class driver{
 
-       public static void main(String args[]) throws InterruptedException {
+       public static void main(String args[]) throws Exception {
           int temp = 0;
            Scanner inputOne = new Scanner(System.in);
            boolean check = false;
