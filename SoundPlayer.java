@@ -26,6 +26,7 @@ public class SoundPlayer
         sunk.add( "sadviolin.wav" );
         win.add( "sans.wav" );
         win.add( "bangindonk.wav" );
+        win.add( "torture.wav" );
         lose.add( "clownmusic.wav" );
         lose.add( "dog.wav" );
     }
