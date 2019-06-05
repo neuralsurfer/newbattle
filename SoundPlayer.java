@@ -19,7 +19,7 @@ public class SoundPlayer
         miss.add( "mariomiss.wav" );
         miss.add( "bruh.wav" );
         miss.add( "ohno.wav" );
-        miss.add( "adminhelp" );
+        miss.add( "adminhelp.wav" );
         miss.add( "jono.wav" );
         miss.add( "clownhorn.wav" );
         sunk.add( "fbi.wav" );
