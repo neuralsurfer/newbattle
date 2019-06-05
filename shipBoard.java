@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 public class shipBoard{
 
@@ -265,11 +266,15 @@ public class shipBoard{
                     if(rotate == 0 ){
                       
                       game[r][c] = new shipTile(boat);
+                      boat.addX(i,r);
+                      boat.addY(i,c);
                       r++;
                     }
                    if(rotate == 1 ){
                        
                       game[r][c] = new shipTile(boat);
+                      boat.addX(i,r);
+                      boat.addY(i,c);
                       c--;
                     }
                    
@@ -284,11 +289,15 @@ public class shipBoard{
                     if(rotate == 2 ){
                       
                       game[r][c] = new shipTile(boat);
+                      boat.addX(i,r);
+                      boat.addY(i,c);
                       r--;
                     }
                    if(rotate == 3 ){
                        
                       game[r][c] = new shipTile(boat);
+                      boat.addX(i,r);
+                      boat.addY(i,c);
                       c++;
                     }
                    

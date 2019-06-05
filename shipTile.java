@@ -21,10 +21,16 @@ public class shipTile{
         shot = false;
     }
     
-    public void shoot(){
+    public void shoot(visibleSBoard r, visibleSBoard j){
         
         shot = true;
-        ref.hit();
+        ref.hit(r,j);
+        
+    }
+    public void shoot(visibleSBoard r){
+        
+        shot = true;
+        ref.hit(r);
         
     }
     

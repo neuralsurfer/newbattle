@@ -199,7 +199,7 @@ public class game{
         
         if(r > -1 && r < i.getShipBoard().length && c >-1 && c < i.getShipBoard()[0].length){
             if(i.getTile(r,c) != null && !i.getTile(r,c).isShot()){
-                i.getTile(r,c).shoot();
+                i.getTile(r,c).shoot(j,k);
                 j.setVisible(r,c,"X");
                 k.setVisible(r,c,"X");
                 hit = 2;
@@ -226,7 +226,7 @@ public class game{
         
        if(e.isValid(r,c)){
            ev.setVisible(r,c,"X");
-           e.getTile(r,c).shoot();
+           e.getTile(r,c).shoot(ev);
         }
         else{
             ev.setVisible(r,c,"O");

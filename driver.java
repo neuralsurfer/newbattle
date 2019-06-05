@@ -9,7 +9,14 @@ public class driver{
            int x = 0;
            int y = 0;
            SoundPlayer play = new SoundPlayer();
-          
+            System.out.println("Welcome to Battleship Meme Edition!\u00A9\n\nInstructions:\n\t"+
+            "You can either play with 2 players or an AI which can be set to be extreamily easy to beat to virtually impossible to beat."+
+            "\n\tYou can enter your ships in manually or have them placed automatically, on each turn enter the row and column of the ship you wish to fire at."+
+            "\n\tA number represents a ship and the quanitity represents its original length, an \"O\" represents a shot that missed,\n\ta \"X\" represents a shot that was hit, and a \"-\" represents a ship that has been sunk."+
+            "\n\tWhen you see two boards, the bottom board represents your ships and any marks represent the hits and misses the enemy has made on your ships."+
+            "\n\tThe top board is your targeting board and marks represent the hits and misses you have made on the enemy board."+
+            "\n\tThe first player to sink all enemy ships wins! Have fun!\n");
+            
            while(!check){
            System.out.println("How many rows would you like there to be?\n ");
            
@@ -107,11 +114,11 @@ public class driver{
         
         else{
             int d = 0;
-            while(d < 1 || d > 10){
-            System.out.println("\nEnter difficulty level, 1-10 (1-3 is easy, 4-6 is medium, 7-8 is hard, 9-10 is near impossible)");
+            while(d < 1 || d > 11){
+            System.out.println("\nEnter difficulty level, 1-11 (1-3 is easy, 4-6 is medium, 7-8 is hard, 9-10 is near impossible, I promise you will lose if you pick 11).\n");
             
             d =  inputOne.nextInt();
-            if(d<1||d>10) System.out.println("\nThat isn't a valid difficulty level\n");
+            if(d<1||d>11) System.out.println("\nThat isn't a valid difficulty level\n");
             
             
         }

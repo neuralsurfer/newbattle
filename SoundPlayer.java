@@ -30,6 +30,7 @@ public class SoundPlayer
         gsunk.add( "fbi.wav" );
         bsunk.add( "sadviolin.wav" );
         bsunk.add( "jono.wav" );
+        bsunk.add("lionKingMeme.wav");
         win.add( "sans.wav" );
         win.add( "bangindonk.wav" );
         win.add( "torture.wav" );

@@ -30,7 +30,9 @@ public class AI{
         int second = (int)(Math.random()*4);
         int[] index;
         
-        if(temp+second < difficulty+1){
+        
+        
+        if(temp+second < difficulty+1 || difficulty == 11){
             index = e.find();
             game.fireAI(index[0],index[1],e,two);
            
