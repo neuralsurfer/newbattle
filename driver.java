@@ -13,7 +13,7 @@ public class driver{
            
            x = inputOne.nextInt();
            
-           System.out.println("How many collums would you like there to be?\n ");
+           System.out.println("\nHow many columns would you like there to be?\n ");
            
            y = inputOne.nextInt();
            if(x > 7 && x <21 && y > 7 && y < 21){
@@ -40,11 +40,44 @@ public class driver{
            visibleSBoard two = new visibleSBoard(x,y);
            visibleSBoard tTwo = new visibleSBoard(x,y);
            shipBoard pTwo = new shipBoard(x,y);
-           
-           
-           game.setShips(pOne, one);
+           boolean tester = false;
+           int temp2 = 0;
+           while(!tester){
+           System.out.println("Player One, would you like to manually place your ships or have it be done automatically? Enter 1 for manual, 2 for automatic)\n");
+           temp2 = inputOne.nextInt();
+           if(temp2 == 1 || temp2 == 2){
+               tester = true;
+            }
+            else{
+                System.out.println("\nNot a valid response\n");
+            }
+        }
+           if(temp2 == 1)game.setShips(pOne, one);
+           else if(temp2 == 2){
+               
+               pOne.set(one);
+               System.out.println("\nShips have been placed\n");
+            }
            game.transition();
-           game.setShips(pTwo,two);
+           
+           temp2 = 0;
+           tester = false;
+              while(!tester){
+           System.out.println("Player Two, would you like to manually place your ships or have it be done automatically? Enter 1 for manual, 2 for automatic)\n");
+           temp2 = inputOne.nextInt();
+           if(temp2 == 1 || temp2 == 2){
+               tester = true;
+            }
+            else{
+                System.out.println("\nNot a valid response\n");
+            }
+        }
+        
+           if(temp2 == 1)game.setShips(pTwo,two);
+           else if(temp2 == 2){pTwo.set(two);
+               System.out.println("\nShips have been placed\n");
+               
+            }
            game.transition();
            
            game.play(pOne,one,tOne,pTwo,two,tTwo);
@@ -85,7 +118,24 @@ public class driver{
            shipBoard pTwo = new shipBoard(x,y);
            
            AI ar = new AI(pTwo, pOne, two, one,d);
-           game.setShips(pOne,one);
+           boolean tester = false;
+           int temp2 = 0;
+           while(!tester){
+           System.out.println("Player One, would you like to manually place your ships or have it be done automatically? Enter 1 for manual, 2 for automatic)\n");
+           temp2 = inputOne.nextInt();
+           if(temp2 == 1 || temp2 == 2){
+               tester = true;
+            }
+            else{
+                System.out.println("\nNot a valid response\n");
+            }
+        }
+           if(temp2 == 1)game.setShips(pOne, one);
+           else if(temp2 == 2){
+               
+               pOne.set(one);
+               System.out.println("\nShips have been placed\n");
+            }
            game.clear();
            ar.set();
            game.playAI(pOne,one,tOne,pTwo,two,ar);

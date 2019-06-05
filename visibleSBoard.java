@@ -37,12 +37,12 @@ public class visibleSBoard{
         for(int i = 0; i < len; i++){
                 if(rotation == 0){
                     
-                    value[r][c] = "\u25A1";
+                    value[r][c] = String.valueOf(len);
                     r++;
                 }
                    if(rotation == 1){
                     
-                    value[r][c] = "\u25A1";
+                    value[r][c] = String.valueOf(len);
                     c--;
                 }    
                        
@@ -51,12 +51,12 @@ public class visibleSBoard{
         for(int i = 0; i < len; i++){
                 if(rotation == 2){
                     
-                    value[r][c] = "\u25A1";
+                    value[r][c] = String.valueOf(len);
                     r--;
                 }
                    if(rotation == 3){
                     
-                    value[r][c] = "\u25A1";
+                    value[r][c] = String.valueOf(len);
                     c++;
                 }    
                        

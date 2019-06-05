@@ -161,6 +161,99 @@ public class shipBoard{
          return output;
         
     }
+    public void set(visibleSBoard input){
+        
+        
+         int oneLen = 5;
+            int tempX = 0;
+            int tempY = 0;
+            int rotation = 0;
+            boolean check = true;
+            boolean checkThree = false;
+            
+         
+            while(oneLen >=2){
+               check = true;
+               tempX = (int)(Math.random()*getLen());
+               tempY = (int)(Math.random()*get0Len());
+               rotation = (int)(Math.random()*4);
+               int counter = tempX;
+               int counterY = tempY;
+               if(rotation == 0 || rotation == 1){
+               for(int i = 0; i < oneLen; i++){
+                   
+                   if(rotation == 0 && !input.isValid(counter,tempY)){
+                      
+                       check = false;
+                      
+                    }
+                   if(rotation == 1 && !input.isValid(tempX,counterY)){
+                       
+                       check = false;
+                      
+                    }
+                    
+                    if(rotation == 0)counter++;
+                   if(rotation == 1) counterY--;
+                }
+            }
+            else if(rotation == 2 || rotation == 3){
+                
+                for(int i = 0; i < oneLen; i++){
+                   
+                   if(rotation == 2 && !input.isValid(counter,tempY)){
+                       
+                       check = false;
+                     
+                    }
+                   if(rotation == 3 && !input.isValid(tempX,counterY)){
+                       
+                       check = false;
+                      
+                    }
+                   
+                   if(rotation == 2)counter--;
+                   if(rotation == 3) counterY++;
+                }
+                
+                
+            }
+            else{
+                check = false;
+                
+            }
+            
+               if(check){
+                   
+                   input.setVisible(tempX,tempY,oneLen,rotation); 
+                   setShip(tempX,tempY,oneLen,rotation);
+                   if(!checkThree && oneLen == 3){
+                       checkThree = true;
+                    }
+                   
+                    
+                    else{
+                    oneLen--;
+                    
+                   }
+                }
+              
+              
+               
+              
+              
+                 
+                
+              
+               
+                
+               
+                
+                
+            }
+        
+        
+    }
     public void setShip(int r, int c, int le, int rotate){
         
          ship boat = new ship(le);
