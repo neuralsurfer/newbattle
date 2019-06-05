@@ -146,12 +146,12 @@ public class driver{
         two.printVisibleBoard();
           if(game.isWinner(pOne,pTwo) == 1){
                
-               System.out.println("\nPlayer One has won the game!");
+               System.out.println("\n\tPlayer One has won the game!");
                
             }
             else{
                 
-               System.out.println("\nThe AI has won the game!"); 
+               System.out.println("\n\tThe AI has won the game!"); 
                
         }
         
