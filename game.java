@@ -199,9 +199,10 @@ public class game{
         
         if(r > -1 && r < i.getShipBoard().length && c >-1 && c < i.getShipBoard()[0].length){
             if(i.getTile(r,c) != null && !i.getTile(r,c).isShot()){
-                i.getTile(r,c).shoot(j,k);
+               
                 j.setVisible(r,c,"X");
                 k.setVisible(r,c,"X");
+                i.getTile(r,c).shoot(j,k);
                 hit = 2;
             }
             else if(j.getVisible(r,c) == null){
@@ -267,7 +268,7 @@ public class game{
         System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         rInput--;
-        System.out.println("Enter the collum of the ship you want to fire at");
+        System.out.println("Enter the column of the ship you want to fire at");
         cInput = input.nextInt();
         cInput--;
         while(fire(rInput,cInput,pTwo,two,tOne) == 0){
@@ -275,7 +276,7 @@ public class game{
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         rInput--;
-        System.out.println("Enter the collum of the ship you want to fire at");
+        System.out.println("Enter the column of the ship you want to fire at");
         cInput = input.nextInt();
          cInput--;
         }
@@ -320,7 +321,7 @@ public class game{
         System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         rInput--;
-        System.out.println("Enter the collum of the ship you want to fire at");
+        System.out.println("Enter the column of the ship you want to fire at");
         cInput = input.nextInt();
         cInput--;
         while(fire(rInput,cInput,pOne,one,tTwo)==0){
@@ -328,7 +329,7 @@ public class game{
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         rInput--;
-        System.out.println("Enter the collum of the ship you want to fire at");
+        System.out.println("Enter the column of the ship you want to fire at");
         cInput = input.nextInt();
         cInput--;    
         }
@@ -342,7 +343,7 @@ public class game{
         
                 if(pOne.getTile(rInput,cInput)!= null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("\tEnemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
-             play.gmissSound();
+             play.gsunkSound();
             }  else if(pOne.getTile(rInput,cInput) == null){
              System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              play.bmissSound();
@@ -388,7 +389,7 @@ public class game{
         System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         rInput--;
-        System.out.println("Enter the collum of the ship you want to fire at");
+        System.out.println("Enter the column of the ship you want to fire at");
         cInput = input.nextInt();
         cInput--;
         while(fire(rInput,cInput,pTwo,two,tOne) == 0){
@@ -396,7 +397,7 @@ public class game{
             System.out.println("Enter the row of the ship you want to fire at");
         rInput = input.nextInt();
         rInput--;
-        System.out.println("Enter the collum of the ship you want to fire at");
+        System.out.println("Enter the column of the ship you want to fire at");
         cInput = input.nextInt();
          cInput--;   
         }

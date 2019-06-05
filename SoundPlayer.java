@@ -1,6 +1,7 @@
 import java.io.*;
 import sun.audio.*;
 import java.util.*;
+//gamer
 public class SoundPlayer
 {
     ArrayList<String> ghit = new ArrayList<String>();
@@ -19,6 +20,7 @@ public class SoundPlayer
         gsunk.add("dancinS.wav");
         ghit.add( "hitmark.wav" );
         ghit.add( "hit-or-miss.wav" );
+        ghit.add("kachowLit.wav");
         gmiss.add("bruh.wav");
         bmiss.add("oof.wav");
         bmiss.add( "mariomiss.wav" );
