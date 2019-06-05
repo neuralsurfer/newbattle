@@ -11,7 +11,23 @@ public class SoundPlayer
     int randNum;
     public SoundPlayer()
     {
-        //This part gonnna be added later so it doesn't game ya
+        hit.add( "clang.wav" );
+        hit.add( "oof.wav" );
+        hit.add( "wow.wav" );
+        hit.add( "hitmark.wav" );
+        hit.add( "hit-or-miss.wav" );
+        miss.add( "mariomiss.wav" );
+        miss.add( "bruh.wav" );
+        miss.add( "ohno.wav" );
+        miss.add( "adminhelp" );
+        miss.add( "jono.wav" );
+        miss.add( "clownhorn.wav" );
+        sunk.add( "fbi.wav" );
+        sunk.add( "sadviolin.wav" );
+        win.add( "sans.wav" );
+        win.add( "bangindonk.wav" );
+        lose.add( "clownmusic.wav" );
+        lose.add( "dog.wav" );
     }
     public void player( String type ) throws Exception
     {
