@@ -4,7 +4,8 @@ import java.util.*;
 public class SoundPlayer
 {
     ArrayList<String> hit = new ArrayList<String>();
-    ArrayList<String> sunk = new ArrayList<String>();
+    ArrayList<String> gsunk = new ArrayList<String>();
+    ArrayList<String> bsunk = new ArrayList<String>();
     ArrayList<String> miss = new ArrayList<String>();
     ArrayList<String> win = new ArrayList<String>();
     ArrayList<String> lose = new ArrayList<String>();
@@ -20,10 +21,10 @@ public class SoundPlayer
         miss.add( "bruh.wav" );
         miss.add( "ohno.wav" );
         miss.add( "adminhelp.wav" );
-        miss.add( "jono.wav" );
         miss.add( "clownhorn.wav" );
-        sunk.add( "fbi.wav" );
-        sunk.add( "sadviolin.wav" );
+        gsunk.add( "fbi.wav" );
+        bsunk.add( "sadviolin.wav" );
+        bsunk.add( "jono.wav" );
         win.add( "sans.wav" );
         win.add( "bangindonk.wav" );
         win.add( "torture.wav" );
@@ -45,10 +46,15 @@ public class SoundPlayer
         randNum = (int)( Math.random() * hit.size() );
         player( hit.get( randNum ) );
     }
-    public void sunkSound() throws Exception
+    public void bsunkSound() throws Exception
     {
-        randNum = (int)( Math.random() * sunk.size() );
-        player( sunk.get( randNum ) );
+        randNum = (int)( Math.random() * bsunk.size() );
+        player( bsunk.get( randNum ) );
+    }
+    public void gsunkSound() throws Exception
+    {
+        randNum = (int)( Math.random() * gsunk.size() );
+        player( gsunk.get( randNum ) );
     }
     public void missSound() throws Exception
     {
