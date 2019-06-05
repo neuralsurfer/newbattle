@@ -9,7 +9,7 @@ public class driver{
            int x = 0;
            int y = 0;
            SoundPlayer play = new SoundPlayer();
-           play.loseSound();
+          
            while(!check){
            System.out.println("How many rows would you like there to be?\n ");
            
@@ -18,12 +18,12 @@ public class driver{
            System.out.println("\nHow many columns would you like there to be?\n ");
            
            y = inputOne.nextInt();
-           if(x > 7 && x <21 && y > 7 && y < 21){
+           if(x > 6 && x <21 && y > 6 && y < 21){
                check = true;
                
             }
             else{
-                System.out.println("That isn't a valid board size\n");
+                System.out.println("\nThat isn't a valid board size\n");
                 
             }
         }
@@ -33,6 +33,11 @@ public class driver{
            
            System.out.println("Would you like to play with an AI or with two players? (Enter 1 for AI, 2 for two players)\n");
            temp = inputOne.nextInt();
+           while(temp != 1 && temp != 2) {
+               System.out.println("Not a valid input\n");
+               System.out.println("Would you like to play with an AI or with two players? (Enter 1 for AI, 2 for two players)\n");
+               temp = inputOne.nextInt();
+            }
            if(temp==2){
                game.clear();
            visibleSBoard one = new visibleSBoard(x,y);
@@ -103,10 +108,10 @@ public class driver{
         else{
             int d = 0;
             while(d < 1 || d > 10){
-            System.out.println("Enter difficulty level, 1-10 (1-3 is easy, 4-6 is medium, 7-8 is hard, 9-10 is near impossible)");
+            System.out.println("\nEnter difficulty level, 1-10 (1-3 is easy, 4-6 is medium, 7-8 is hard, 9-10 is near impossible)");
             
             d =  inputOne.nextInt();
-            if(d<1||d>10) System.out.println("That isn't a valid difficulty level\n");
+            if(d<1||d>10) System.out.println("\nThat isn't a valid difficulty level\n");
             
             
         }
@@ -149,10 +154,10 @@ public class driver{
           if(game.isWinner(pOne,pTwo) == 1){
                
                System.out.println("\n\tPlayer One has won the game!");
-               
+               play.winSound();
             }
             else{
-                
+                play.loseSound();
                System.out.println("\n\tThe AI has won the game!"); 
                
         }

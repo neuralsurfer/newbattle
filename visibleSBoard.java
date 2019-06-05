@@ -75,6 +75,7 @@ public class visibleSBoard{
     
     public void printVisibleBoard(){
         String[] abc = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+         
         for(int r = 0; r < value.length; r++){
            
             if(r == 0){
@@ -113,7 +114,7 @@ public class visibleSBoard{
             }
            System.out.println();
             }
-            System.out.println("\n");
+             System.out.println("\n");
             
             
         }

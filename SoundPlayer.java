@@ -3,25 +3,30 @@ import sun.audio.*;
 import java.util.*;
 public class SoundPlayer
 {
-    ArrayList<String> hit = new ArrayList<String>();
+    ArrayList<String> ghit = new ArrayList<String>();
     ArrayList<String> gsunk = new ArrayList<String>();
     ArrayList<String> bsunk = new ArrayList<String>();
-    ArrayList<String> miss = new ArrayList<String>();
+    ArrayList<String> gmiss = new ArrayList<String>();
     ArrayList<String> win = new ArrayList<String>();
     ArrayList<String> lose = new ArrayList<String>();
+    ArrayList<String> bhit = new ArrayList<String>();
+    ArrayList<String> bmiss = new ArrayList<String>();
     int randNum;
     public SoundPlayer()
     {
-        hit.add( "clang.wav" );
-        hit.add( "oof.wav" );
-        hit.add( "wow.wav" );
-        hit.add( "hitmark.wav" );
-        hit.add( "hit-or-miss.wav" );
-        miss.add( "mariomiss.wav" );
-        miss.add( "bruh.wav" );
-        miss.add( "ohno.wav" );
-        miss.add( "adminhelp.wav" );
-        miss.add( "clownhorn.wav" );
+        ghit.add( "clang.wav" );
+        ghit.add( "oof.wav" );
+        gsunk.add("dancinS.wav");
+        ghit.add( "hitmark.wav" );
+        ghit.add( "hit-or-miss.wav" );
+        gmiss.add("bruh.wav");
+        bmiss.add("oof.wav");
+        bmiss.add( "mariomiss.wav" );
+        bmiss.add( "bruh.wav" );
+        bmiss.add( "ohno.wav" );
+        bhit.add("ohno.wav");
+        bmiss.add( "adminhelp.wav" );
+        bmiss.add( "clownhorn.wav" );
         gsunk.add( "fbi.wav" );
         bsunk.add( "sadviolin.wav" );
         bsunk.add( "jono.wav" );
@@ -41,10 +46,15 @@ public class SoundPlayer
         
         AudioPlayer.player.start( audioStream );
     }
-    public void hitSound() throws Exception
+    public void ghitSound() throws Exception
     {
-        randNum = (int)( Math.random() * hit.size() );
-        player( hit.get( randNum ) );
+        randNum = (int)( Math.random() * ghit.size() );
+        player( ghit.get( randNum ) );
+    }
+    public void bhitSound() throws Exception
+    {
+        randNum = (int)( Math.random() * bhit.size() );
+        player( bhit.get( randNum ) );
     }
     public void bsunkSound() throws Exception
     {
@@ -56,10 +66,15 @@ public class SoundPlayer
         randNum = (int)( Math.random() * gsunk.size() );
         player( gsunk.get( randNum ) );
     }
-    public void missSound() throws Exception
+    public void bmissSound() throws Exception
     {
-        randNum = (int)( Math.random() * miss.size() );
-        player( miss.get( randNum ) );
+        randNum = (int)( Math.random() * bmiss.size() );
+        player( bmiss.get( randNum ) );
+    }
+    public void gmissSound() throws Exception
+    {
+        randNum = (int)( Math.random() * gmiss.size() );
+        player( gmiss.get( randNum ) );
     }
     public void winSound() throws Exception
     {
