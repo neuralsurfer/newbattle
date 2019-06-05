@@ -1,7 +1,7 @@
 
 public class ship{
     
-    int health;
+    static int health;
     
     public ship(int h){
         health = h;
