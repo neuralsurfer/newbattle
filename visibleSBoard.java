@@ -86,8 +86,9 @@ public class visibleSBoard{
                 
                 
             }
+            System.out.println();
         }
-         System.out.println();
+         
             System.out.print("\t");
             for(int c = 0; c < value[0].length; c++){
                 

@@ -250,15 +250,16 @@ public class game{
         tOne.printVisibleBoard();
         one.printVisibleBoard();
         
-        if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
+         if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
+             System.out.println("\tYour ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
+             play.bsunkSound();
+            }
+        else if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
              System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
              play.bhitSound();
             }
         
-                if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
-             System.out.println("\tYour ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
-             play.bsunkSound();
-            }
+              
                  else if(pOne.getTile(rInput,cInput) == null && !first) {
              System.out.println("Enemy missed you at row: " +(rInput +1)+ ", col: "+ (1+cInput) +"\n");
              play.gmissSound();
@@ -283,14 +284,15 @@ public class game{
         clear();
         tOne.printVisibleBoard();
         one.printVisibleBoard();
-           if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
-             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
-             play.gmissSound();
-            }
+           
         
                  if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("\tEnemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              play.gsunkSound();
+            }
+             else if(pTwo.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
+             play.ghitSound();
             }
                  else if(pTwo.getTile(rInput,cInput) == null){
              System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
@@ -304,14 +306,15 @@ public class game{
               tTwo.printVisibleBoard();
         two.printVisibleBoard();
         
-        if(pTwo.getTile(rInput,cInput)!=  null &&  pTwo.getTile(rInput,cInput).isShot()){
-             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
-             play.bhitSound();
-            }
+       
         
                  if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("\tYour ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              play.bsunkSound();
+            }
+             else if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
+             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
+             play.bhitSound();
             }
            else if(pTwo.getTile(rInput,cInput) == null){
              System.out.println("Enemy missed at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
@@ -336,15 +339,17 @@ public class game{
          clear();
            tTwo.printVisibleBoard();
         two.printVisibleBoard(); 
-        if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
-             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
-             play.ghitSound();
-            }
+        
         
                 if(pOne.getTile(rInput,cInput)!= null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("\tEnemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              play.gsunkSound();
-            }  else if(pOne.getTile(rInput,cInput) == null){
+            } 
+             else if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
+             play.ghitSound();
+            }
+            else if(pOne.getTile(rInput,cInput) == null){
              System.out.println("Miss at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              play.bmissSound();
             }
@@ -371,14 +376,15 @@ public class game{
             currentPlayer = "Player One";
         tOne.printVisibleBoard();
         one.printVisibleBoard();
-       if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
-             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
-             play.bhitSound();
-            }
+       
         
                if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("\tYour ship has been sunk at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
              play.bsunkSound();
+            }
+             else if(pOne.getTile(rInput,cInput) != null && pOne.getTile(rInput,cInput).isShot()){
+             System.out.println("Enemy hit your ship at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
+             play.bhitSound();
             }
                  else if(pOne.getTile(rInput,cInput) == null &&!first) {
              System.out.println("Enemy missed you at row: " +(rInput +1)+ ", col: "+ (1+cInput)+"\n");
@@ -404,15 +410,15 @@ public class game{
         clear();
         tOne.printVisibleBoard();
         one.printVisibleBoard();
-         if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
-             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
-             play.ghitSound();
-            }
+         
          if(pTwo.getTile(rInput,cInput)!= null && pTwo.getTile(rInput,cInput).getRef().getHealth()==0){
              System.out.println("\tEnemy ship has been sunk at row: " +(rInput+1) + ", col: "+ (cInput+1)+"\n");
              play.gsunkSound();
             }
-        
+         else if(pTwo.getTile(rInput,cInput) != null && pTwo.getTile(rInput,cInput).isShot()){
+             System.out.println("Hit at row: " +(rInput+1) + ", col: "+ (1+cInput)+"\n");
+             play.ghitSound();
+            }
         
                
                else if(pTwo.getTile(rInput,cInput) == null){

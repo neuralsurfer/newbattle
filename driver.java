@@ -25,7 +25,7 @@ public class driver{
            System.out.println("\nHow many columns would you like there to be?\n ");
            
            y = inputOne.nextInt();
-           if(x > 6 && x <21 && y > 6 && y < 21){
+           if(x > 5 && x <21 && y > 5 && y < 21){
                check = true;
                
             }
