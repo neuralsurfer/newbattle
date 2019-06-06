@@ -21,13 +21,17 @@ public class SoundPlayer
         bsunk.add("fine.wav");
         ghit.add( "hit-or-miss.wav" );
         ghit.add("kachowLit.wav");
-        gmiss.add("star.wav");
+        bsunk.add("fissionmailed.wav");
         gmiss.add("clownhorn.wav");
         gmiss.add("water.wav");
         gmiss.add("oof.wav");
         bmiss.add("oof.wav");
-        
-        //bmiss.add( "bruh.wav" );
+        bhit.add("clang.wav");
+        gsunk.add("dog.wav");
+        bsunk.add("ohno.wav");
+        bmiss.add("fissionmailed.wav");
+        bmiss.add("mariomiss.wav");
+        bsunk.add( "bruh.wav" );
         bmiss.add("water.wav");
         bhit.add("oof.wav");
         bsunk.add("sad.wav");
@@ -48,6 +52,7 @@ public class SoundPlayer
         gsunk.add("oldmanScream.wav");
         ghit.add("beans.wav");
         bsunk.add("rave.wav");
+        win.add("dancinS.wav");
     }
     public void player( String type ) throws Exception
     {
