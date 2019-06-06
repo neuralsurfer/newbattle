@@ -220,42 +220,40 @@ String move11=""+
         AudioStream audioStream = new AudioStream( in );
         
         AudioPlayer.player.start( audioStream );
-        while( true )
-        {
+        
+        
             System.out.print( move1 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move2 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move3 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move4 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move5 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move6 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move7 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move8 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move9 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move10 );
-            Thread.sleep( 500 );
+            Thread.sleep( 710 );
             System.out.print('\u000C');
             System.out.print( move11 );
-            Thread.sleep( 500 );
-            System.out.print('\u000C');
+            Thread.sleep( 710 );
         }
 
     }
-}
