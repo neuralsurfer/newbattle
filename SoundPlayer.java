@@ -27,17 +27,22 @@ public class SoundPlayer
         bmiss.add( "bruh.wav" );
         bmiss.add( "ohno.wav" );
         bhit.add("ohno.wav");
+        gsunk.add("star.wav");
         bmiss.add( "adminhelp.wav" );
         bmiss.add( "clownhorn.wav" );
         gsunk.add( "fbi.wav" );
+        bhit.add("sansh.wav");
         bsunk.add( "sadviolin.wav" );
         bsunk.add( "jono.wav" );
         bsunk.add("lionKingMeme.wav");
-        win.add( "sans.wav" );
+        gsunk.add( "sans.wav" );
         win.add( "bangindonk.wav" );
         win.add( "torture.wav" );
         lose.add( "clownmusic.wav" );
         lose.add( "dog.wav" );
+        gsunk.add("oldmanScream.wav");
+        ghit.add("beans.wav");
+        bsunk.add("rave.wav");
     }
     public void player( String type ) throws Exception
     {
