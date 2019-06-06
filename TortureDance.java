@@ -20,7 +20,6 @@ public class TortureDance
           {
               Thread.sleep( 500 );
               System.out.print('\u000C');
-            
           }
           System.out.print( dance.substring( ( 58 * i ), (58 * i + 56 ) ) + "\n" );
           if( i == 31 )
