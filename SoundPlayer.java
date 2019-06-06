@@ -21,7 +21,10 @@ public class SoundPlayer
         bsunk.add("fine.wav");
         ghit.add( "hit-or-miss.wav" );
         ghit.add("kachowLit.wav");
-        gmiss.add("bruh.wav");
+        gmiss.add("star.wav");
+        gmiss.add("clownhorn.wav");
+        gmiss.add("water.wav");
+        gmiss.add("oof.wav");
         bmiss.add("oof.wav");
         
         //bmiss.add( "bruh.wav" );

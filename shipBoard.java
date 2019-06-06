@@ -110,6 +110,10 @@ public class shipBoard{
             
             
         }
+        if(temp.length == 0){
+            
+            return find();
+        }
          int index = (int)(Math.random()*temp.length);
          
          int[] output = {temp[index],tempY[index]};
