@@ -9,7 +9,7 @@ public class driver{
            int x = 0;
            int y = 0;
            SoundPlayer play = new SoundPlayer();
-            System.out.println("Welcome to Battleship Meme Edition!\u00A9 made by: Shaun Diem-Lane, Kevin Kersey, and Aaron Lee\n\nInstructions:\n\t"+
+            System.out.println("Welcome to Battleship Meme Edition!\u00A9 Made by: Shaun Diem-Lane, Kevin Kersey, and Aaron Lee\n\nInstructions:\n\t"+
             "You can either play with 2 players or an AI which can be set to be extremely easy to beat to virtually impossible to beat."+
             "\n\tYou can enter your ships in manually or have them placed automatically, on each turn enter the row and column of the ship you wish to fire at."+
             "\n\tA number represents a ship and the quanitity represents its original length, an \"O\" represents a shot that missed,\n\ta \"X\" represents a shot that was hit, and a \"-\" represents a ship that has been sunk."+
