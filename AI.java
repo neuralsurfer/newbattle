@@ -34,7 +34,7 @@ public class AI{
         
         
         
-        if(temp+second +((len*len0)/90) < difficulty+1 || difficulty == 11){
+        if(temp+second  < difficulty+1 || difficulty == 11){
             index = e.find();
             game.fireAI(index[0],index[1],e,two);
            

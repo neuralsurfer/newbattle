@@ -9,8 +9,8 @@ public class driver{
            int x = 0;
            int y = 0;
            SoundPlayer play = new SoundPlayer();
-            System.out.println("Welcome to Battleship Meme Edition!\u00A9\n\nInstructions:\n\t"+
-            "You can either play with 2 players or an AI which can be set to be extreamily easy to beat to virtually impossible to beat."+
+            System.out.println("Welcome to Battleship Meme Edition!\u00A9 made by: Shaun Diem-Lane, Kevin Kersey, and Aaron Lee\n\nInstructions:\n\t"+
+            "You can either play with 2 players or an AI which can be set to be extremely easy to beat to virtually impossible to beat."+
             "\n\tYou can enter your ships in manually or have them placed automatically, on each turn enter the row and column of the ship you wish to fire at."+
             "\n\tA number represents a ship and the quanitity represents its original length, an \"O\" represents a shot that missed,\n\ta \"X\" represents a shot that was hit, and a \"-\" represents a ship that has been sunk."+
             "\n\tWhen you see two boards, the bottom board represents your ships and any marks represent the hits and misses the enemy has made on your ships."+
@@ -18,11 +18,11 @@ public class driver{
             "\n\tThe first player to sink all enemy ships wins! Have fun!\n");
             
            while(!check){
-           System.out.println("How many rows would you like there to be?\n ");
+           System.out.println("How many rows would you like there to be? Min 6, Max 20\n ");
            
            x = inputOne.nextInt();
            
-           System.out.println("\nHow many columns would you like there to be?\n ");
+           System.out.println("\nHow many columns would you like there to be? Min 6, Max 20\n ");
            
            y = inputOne.nextInt();
            if(x > 5 && x <21 && y > 5 && y < 21){
