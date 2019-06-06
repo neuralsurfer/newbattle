@@ -18,15 +18,17 @@ public class SoundPlayer
         ghit.add( "clang.wav" );
         ghit.add( "oof.wav" );
         gsunk.add("dancinS.wav");
-        ghit.add( "hitmark.wav" );
+        bsunk.add("fine.wav");
         ghit.add( "hit-or-miss.wav" );
         ghit.add("kachowLit.wav");
         gmiss.add("bruh.wav");
         bmiss.add("oof.wav");
-        bmiss.add( "mariomiss.wav" );
-        bmiss.add( "bruh.wav" );
-        bmiss.add( "ohno.wav" );
-        bhit.add("ohno.wav");
+        
+        //bmiss.add( "bruh.wav" );
+        bmiss.add("water.wav");
+        bhit.add("oof.wav");
+        bsunk.add("sad.wav");
+        lose.add("sad.wav");
         gsunk.add("star.wav");
         bmiss.add( "adminhelp.wav" );
         bmiss.add( "clownhorn.wav" );
