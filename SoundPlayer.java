@@ -1,9 +1,9 @@
 import java.io.*;
 import sun.audio.*;
 import java.util.*;
-//gamer
 public class SoundPlayer
 {
+    //array lists containing all the sounds for the games
     ArrayList<String> ghit = new ArrayList<String>();
     ArrayList<String> gsunk = new ArrayList<String>();
     ArrayList<String> bsunk = new ArrayList<String>();
@@ -53,7 +53,7 @@ public class SoundPlayer
         ghit.add("beans.wav");
         bsunk.add("rave.wav");
         win.add("dancinS.wav");
-    }
+    } //initializes all sounds
     public void player( String type ) throws Exception
     {
         String file = "Audio/" + type;
@@ -63,45 +63,45 @@ public class SoundPlayer
         AudioStream audioStream = new AudioStream( in );
         
         AudioPlayer.player.start( audioStream );
-    }
+    } //prepares the sound file for playing, then plays it
     public void ghitSound() throws Exception
     {
         randNum = (int)( Math.random() * ghit.size() );
         player( ghit.get( randNum ) );
-    }
+    } //generates good hit sound
     public void bhitSound() throws Exception
     {
         randNum = (int)( Math.random() * bhit.size() );
         player( bhit.get( randNum ) );
-    }
+    } //generates bad hit sound
     public void bsunkSound() throws Exception
     {
         randNum = (int)( Math.random() * bsunk.size() );
         player( bsunk.get( randNum ) );
-    }
+    } //generates bad sunk sound
     public void gsunkSound() throws Exception
     {
         randNum = (int)( Math.random() * gsunk.size() );
         player( gsunk.get( randNum ) );
-    }
+    } //generates good sunk sound
     public void bmissSound() throws Exception
     {
         randNum = (int)( Math.random() * bmiss.size() );
         player( bmiss.get( randNum ) );
-    }
+    } //generates bad miss sound
     public void gmissSound() throws Exception
     {
         randNum = (int)( Math.random() * gmiss.size() );
         player( gmiss.get( randNum ) );
-    }
+    } //generates good miss sound
     public void winSound() throws Exception
     {
         randNum = (int)( Math.random() * win.size() );
         player( win.get( randNum ) );
-    }
+    } //generates win sound
     public void loseSound() throws Exception
     {
         randNum = (int)( Math.random() * lose.size() );
         player( lose.get( randNum ) );
-    }
-}
+    } //generates lose sound
+}//end class
